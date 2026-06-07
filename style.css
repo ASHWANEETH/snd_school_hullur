@@ -214,8 +214,12 @@ margin-top:12px;
 
 .quote-box{
 
+display:flex;
+align-items:center;
+gap:40px;
+
 background:white;
-padding:30px;
+padding:35px;
 
 border-left:6px solid #8B0000;
 
@@ -228,25 +232,30 @@ box-shadow:
 
 .quote-box img{
 
-width:100%;
-max-width:520px;   /* increased desktop image size */
+width:380px;
+min-width:380px;
 height:auto;
 
-display:block;
-margin:auto;
-
 border-radius:15px;
-
-margin-bottom:25px;
 
 box-shadow:
 0 10px 25px rgba(0,0,0,.15);
 
 }
 
-.quote-box p{
+.chairman-content{
 
-font-size:16px;   /* larger desktop text */
+display:flex;
+flex-direction:column;
+justify-content:center;
+
+flex:1;
+
+}
+
+.chairman-content p{
+
+font-size:16px;
 line-height:2;
 
 text-align:justify;
@@ -256,21 +265,28 @@ color:#555;
 
 .chairman-info{
 
+margin-top:20px;
+
 display:flex;
 flex-direction:column;
-align-items:flex-end;
 
-margin-top:20px;
+align-items:flex-end;
 
 }
 
 .chairman-info h3{
+
 font-size:22px;
+margin-bottom:3px;
+margin-top: 50px;
+
 }
 
 .chairman-info span{
+
 font-size:15px;
 color:#666;
+
 }
 
 
@@ -278,14 +294,64 @@ color:#666;
 
 @media(max-width:768px){
 
+.quote-box{
+
+display:block;
+
+}
+
 .quote-box img{
 
-max-width:260px;   /* keep mobile image smaller */
+display:block;
+width:100%;
+max-width:260px;
+
+margin:auto;
+margin-bottom:25px;
+
+min-width:auto;
+
+}
+
+.chairman-content p{
+
+font-size:14px;
+
+}
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.quote-box{
+
+display:block;   /* back to current mobile layout */
+
+padding:30px;
+
+}
+
+.quote-box img{
+
+display:block;
+
+width:100%;
+max-width:260px;
+
+margin:auto;
+margin-bottom:25px;
+
+min-width:auto;
+
 }
 
 .quote-box p{
 
-font-size:14px;   /* keep mobile text as before */
+font-size:14px;
+
 }
 
 }
