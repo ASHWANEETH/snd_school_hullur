@@ -13,6 +13,13 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
   </head>
+  <!-- IMAGE VIEWER -->
+
+  <div id="imageModal" class="image-modal">
+    <span class="close-modal" onclick="closeImage()"> &times; </span>
+
+    <img id="fullImage" />
+  </div>
 
   <body>
     <!-- NAV -->
@@ -22,7 +29,7 @@
         <img src="images/logo.png" />
 
         <div class="logo-text">
-          <h2>SND SCHOOL</h2>
+          <h2>SND SCHOOL HULLUR</h2>
           <p>Knowledge Is Power</p>
         </div>
       </div>
@@ -144,39 +151,42 @@
         <div class="line"></div>
       </div>
 
-      <div class="activity-grid">
-        <div class="activity-card">
-          <img src="images/Award_ceremony.jpeg" />
+    <div class="activity-grid">
+      <div class="activity-card">
+        <img src="images/Award_ceremony.jpeg" onclick="openImage(this.src)" />
 
-          <h3>Award Ceremony</h3>
+        <h3>Award Ceremony</h3>
 
-          <p>Recognizing excellence</p>
-        </div>
-
-        <div class="activity-card">
-          <img src="images/Function_1.jpeg" />
-
-          <h3>Cultural Programs</h3>
-
-          <p>Encouraging creativity</p>
-        </div>
-
-        <div class="activity-card">
-          <img src="images/School_prayer.jpeg" />
-
-          <h3>Prayer Activities</h3>
-
-          <p>Values and discipline</p>
-        </div>
-
-        <div class="activity-card">
-          <img src="images/Function_2_girls_dance.jpeg" />
-
-          <h3>Celebrations</h3>
-
-          <p>Learning with fun</p>
-        </div>
+        <p>Recognizing excellence</p>
       </div>
+
+      <div class="activity-card">
+        <img src="images/Function_1.jpeg" onclick="openImage(this.src)" />
+
+        <h3>Cultural Programs</h3>
+
+        <p>Encouraging creativity</p>
+      </div>
+
+      <div class="activity-card">
+        <img src="images/School_prayer.jpeg" onclick="openImage(this.src)" />
+
+        <h3>Prayer Activities</h3>
+
+        <p>Values and discipline</p>
+      </div>
+
+      <div class="activity-card">
+        <img
+          src="images/Function_2_girls_dance.jpeg"
+          onclick="openImage(this.src)"
+        />
+
+        <h3>Celebrations</h3>
+
+        <p>Learning with fun</p>
+      </div>
+    </div>
     </section>
 
     <!-- ABOUT -->
@@ -370,6 +380,26 @@
 
         window.open(url, "_blank");
       }
+
+      function openImage(src) {
+        document.getElementById("imageModal").style.display = "flex";
+
+        document.getElementById("fullImage").src = src;
+      }
+
+      function closeImage() {
+        document.getElementById("imageModal").style.display = "none";
+      }
+
+      /* close if background clicked */
+
+      document
+        .getElementById("imageModal")
+        .addEventListener("click", function (e) {
+          if (e.target.id === "imageModal") {
+            closeImage();
+          }
+        });
     </script>
   </body>
 </html>
