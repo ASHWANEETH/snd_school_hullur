@@ -31,6 +31,7 @@
         <li><a href="#">Home</a></li>
         <li><a href="#activities">Activities</a></li>
         <li><a href="#about">About</a></li>
+        <li><a href="#admission">Admission</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -221,6 +222,41 @@
       </div>
     </section>
 
+    <section id="admission" class="admission reveal">
+      <div class="section-title">
+        <h2>Admission Enquiry</h2>
+
+        <div class="line"></div>
+      </div>
+
+      <div class="admission-box">
+        <input type="text" id="studentName" placeholder="Student Name" />
+
+        <input type="text" id="parentName" placeholder="Parent Name" />
+
+        <input type="tel" id="phone" placeholder="Phone Number" />
+
+        <select id="class">
+          <option value="">Select Class</option>
+
+          <option>LKG</option>
+          <option>UKG</option>
+          <option>1st Standard</option>
+          <option>2nd Standard</option>
+          <option>3rd Standard</option>
+          <option>4th Standard</option>
+          <option>5th Standard</option>
+          <option>6th Standard</option>
+          <option>7th Standard</option>
+          <option>8th Standard</option>
+          <option>9th Standard</option>
+          <option>10th Standard</option>
+        </select>
+
+        <button onclick="sendWhatsapp()">Send Admission Enquiry</button>
+      </div>
+    </section>
+
     <footer id="contact">
       <h2>Contact Us</h2>
 
@@ -234,10 +270,10 @@
     <!-- FLOATING BUTTON -->
 
     <div class="floating-contact">
-      <a href="#contact">
-        <i class="fa-solid fa-comments"></i>
+      <a href="https://wa.me/919148467721" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
 
-        <span> Contact </span>
+        <span>Chat With Us</span>
       </a>
     </div>
 
@@ -296,6 +332,44 @@
           }
         });
       });
+
+      function sendWhatsapp() {
+        let student = document.getElementById("studentName").value.trim();
+
+        let parent = document.getElementById("parentName").value.trim();
+
+        let phone = document.getElementById("phone").value.trim();
+
+        let std = document.getElementById("class").value.trim();
+
+        let message = "Hello SND School,\n\nAdmission Enquiry\n\n";
+
+        if (student) {
+          message += `Student Name: ${student}\n`;
+        }
+
+        if (parent) {
+          message += `Parent Name: ${parent}\n`;
+        }
+
+        if (phone) {
+          message += `Phone Number: ${phone}\n`;
+        }
+
+        if (std) {
+          message += `Class Seeking Admission: ${std}\n`;
+        }
+
+        /* nothing entered */
+
+        if (!student && !parent && !phone && !std) {
+          message += "I would like to know more details about admissions.";
+        }
+
+        let url = `https://wa.me/919148467721?text=${encodeURIComponent(message)}`;
+
+        window.open(url, "_blank");
+      }
     </script>
   </body>
 </html>
