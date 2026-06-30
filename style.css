@@ -765,8 +765,6 @@ footer p {
 }
 
 .video-stack {
-  width: 100%;
-  max-width: 100%;
   display: flex;
   flex-direction: column;
   gap: 25px;
@@ -774,25 +772,28 @@ footer p {
 }
 
 .video-card {
+  background: white;
+  padding: 15px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-  overflow: hidden; /* important */
-  box-sizing: border-box;
 }
 
 .video-card video {
   width: 100%;
-  max-width: 100%;
-  height: auto; /* better than fixed height for responsiveness */
-  aspect-ratio: 16 / 9; /* keeps shape */
-  display: block;
+  height: 220px;
   object-fit: cover;
-  border-radius: 12px;
+  display: block;
+  border-radius: 15px;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 769px) {
   .video-card {
-    width: calc(100% - 20px); /* prevents touching screen edges */
+    max-width: 700px;
+    margin: auto;
+  }
+
+  .video-card video {
+    height: 400px;
   }
 }
