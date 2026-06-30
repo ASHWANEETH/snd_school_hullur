@@ -145,48 +145,58 @@
     <section id="activities" class="reveal">
       <div class="section-title activity-title">
         <img src="images/activities.png" />
-
-        <h2>School Activities</h2>
-
+        <h2>Gallery</h2>
         <div class="line"></div>
       </div>
 
-    <div class="activity-grid">
-      <div class="activity-card">
-        <img src="images/Award_ceremony.jpeg" onclick="openImage(this.src)" />
+      <!-- Videos (one below another) -->
+      <div class="video-stack">
+        <div class="activity-card video-card">
+          <video autoplay loop muted playsinline>
+            <source src="images/video1.mp4" type="video/mp4" />
+          </video>
+          <h3>Prayer Activities</h3>
+          <p>Values and discipline</p>
+        </div>
 
-        <h3>Award Ceremony</h3>
-
-        <p>Recognizing excellence</p>
+        <div class="activity-card video-card">
+          <video autoplay loop muted playsinline>
+            <source src="images/video2.mp4" type="video/mp4" />
+          </video>
+          <h3>Smart Class</h3>
+          <p>Interactive digital learning</p>
+        </div>
       </div>
 
-      <div class="activity-card">
-        <img src="images/Function_1.jpeg" onclick="openImage(this.src)" />
+      <!-- Images grid -->
+      <div class="activity-grid">
+        <div class="activity-card">
+          <img src="images/Award_ceremony.jpeg" onclick="openImage(this.src)" />
+          <h3>Award Ceremony</h3>
+          <p>Recognizing excellence</p>
+        </div>
 
-        <h3>Cultural Programs</h3>
+        <div class="activity-card">
+          <img src="images/Function_1.jpeg" onclick="openImage(this.src)" />
+          <h3>Cultural Programs</h3>
+          <p>Encouraging creativity</p>
+        </div>
 
-        <p>Encouraging creativity</p>
+        <div class="activity-card">
+          <img src="images/School_prayer.jpeg" onclick="openImage(this.src)" />
+          <h3>Prayer Activities</h3>
+          <p>Values and discipline</p>
+        </div>
+
+        <div class="activity-card">
+          <img
+            src="images/Function_2_girls_dance.jpeg"
+            onclick="openImage(this.src)"
+          />
+          <h3>Celebrations</h3>
+          <p>Learning with fun</p>
+        </div>
       </div>
-
-      <div class="activity-card">
-        <img src="images/School_prayer.jpeg" onclick="openImage(this.src)" />
-
-        <h3>Prayer Activities</h3>
-
-        <p>Values and discipline</p>
-      </div>
-
-      <div class="activity-card">
-        <img
-          src="images/Function_2_girls_dance.jpeg"
-          onclick="openImage(this.src)"
-        />
-
-        <h3>Celebrations</h3>
-
-        <p>Learning with fun</p>
-      </div>
-    </div>
     </section>
 
     <!-- ABOUT -->
